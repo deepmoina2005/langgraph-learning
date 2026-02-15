@@ -1,36 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic Meta -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WhatsApp AI Chat</title>
+
+  <!-- Title -->
+  <title>WhatsApp AI Assistant</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Font (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
 </head>
+
 <body>
 
-  <!-- Header -->
+  <!-- ===============================
+       HEADER
+  =============================== -->
   <header>
     <h1>💬 WhatsApp AI Assistant</h1>
     <p>LangGraph + Groq + Tavily Search</p>
   </header>
 
-  <!-- Chat Area -->
-  <main>
+  <!-- ===============================
+       MAIN CHAT AREA
+  =============================== -->
+  <main id="chat-container">
+
+    <!-- Chat Messages -->
     <div id="chat-box"></div>
 
-    <!-- Streaming Response -->
-    <div id="stream-box"></div>
+    <!-- Streaming Typing Indicator -->
+    <div id="stream-box" class="typing"></div>
 
-    <!-- Sources -->
+    <!-- Sources Section -->
     <div id="sources-box"></div>
+
   </main>
 
-  <!-- Input Footer -->
+  <!-- ===============================
+       FOOTER INPUT BAR
+  =============================== -->
   <footer>
-    <input id="user-input" type="text" placeholder="Type a message..." />
-    <button id="send-btn">➤</button>
+
+    <!-- Input Field -->
+    <input
+      id="user-input"
+      type="text"
+      placeholder="Type your message..."
+      autocomplete="off"
+    />
+
+    <!-- Send Button -->
+    <button id="send-btn" title="Send Message">
+      ➤
+    </button>
+
   </footer>
 
+  <!-- ===============================
+       JAVASCRIPT
+  =============================== -->
   <script src="script.js"></script>
+
 </body>
 </html>
