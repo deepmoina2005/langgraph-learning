@@ -1,0 +1,229 @@
+/* ===============================
+   PERFECT RESET FOR CHAT APPS
+================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ===============================
+   BODY
+================================ */
+body {
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0b141a;
+  color: white;
+  overflow: hidden;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header {
+  background: #202c33;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #2a3942;
+}
+
+header h1 {
+  font-size: 20px;
+}
+
+header p {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* ===============================
+   MAIN CHAT AREA
+================================ */
+main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  background: url("https://i.ibb.co/8r1Ny2n/whatsapp-bg.png");
+  background-size: cover;
+}
+
+main::-webkit-scrollbar {
+  width: 5px;
+}
+
+main::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===============================
+   CHAT BOX
+================================ */
+#chat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===============================
+   MESSAGE BUBBLE BASE
+================================ */
+.message {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ===============================
+   USER MESSAGE
+================================ */
+.user {
+  align-self: flex-end;
+  background: #005c4b;
+  border-bottom-right-radius: 4px;
+}
+
+/* Bubble Tail */
+.user::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  background: #005c4b;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+/* ===============================
+   AI MESSAGE
+================================ */
+.ai {
+  align-self: flex-start;
+  background: #202c33;
+  border-bottom-left-radius: 4px;
+}
+
+/* Bubble Tail */
+.ai::after {
+  content: "";
+  position: absolute;
+  left: -6px;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  background: #202c33;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* ===============================
+   STREAMING BOX
+================================ */
+#stream-box {
+  margin-top: 10px;
+  padding: 10px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* ===============================
+   SOURCES BOX
+================================ */
+#sources-box {
+  margin-top: 12px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+#sources-box h3 {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #25d366;
+}
+
+#sources-box a {
+  font-size: 12px;
+  display: block;
+  margin-top: 4px;
+  color: #53bdeb;
+  text-decoration: none;
+}
+
+/* ===============================
+   FOOTER INPUT BAR
+================================ */
+footer {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  background: #202c33;
+  border-top: 1px solid #2a3942;
+}
+
+footer input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background: #2a3942;
+  color: white;
+  font-size: 14px;
+}
+
+footer button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: #25d366;
+  font-size: 18px;
+  color: black;
+  transition: 0.2s;
+}
+
+footer button:hover {
+  transform: scale(1.1);
+}
+
+/* ===============================
+   ANIMATION
+================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Typing Animation */
+.typing {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
