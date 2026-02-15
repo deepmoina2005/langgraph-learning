@@ -29,7 +29,7 @@ async function sendMessage() {
 
   if (eventSource) eventSource.close();
 
-  let url = `http://127.0.0.1:8000/chat_stream/${encodeURIComponent(message)}`;
+  let url = `https://langgraph-learning-one.vercel.app/chat_stream/${encodeURIComponent(message)}`;
 
   if (checkpointId) {
     url += `?checkpoint_id=${checkpointId}`;
